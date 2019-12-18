@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./../elements/head %>
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="./../">Start Bootstrap</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <% include ./../elements/search %>
+
+    <!-- Navbar -->
+    <% include ./../elements/narvar %>
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <% include ./../elements/sidebar %>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">users</li>
+        </ol>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+           Quản lý Sản Phẩm</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th> Ảnh minh họa</th>
+                      <th>Tên sản Phẩm</th>
+                      <th>Loại</th>
+                      <th>Giá</th>
+                      <th>Mô tả</th>
+                    </tr>
+                  </thead>
+                 
+                </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="small text-center text-muted my-5">
+          <em>More table examples coming soon...</em>
+        </p> -->
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <% include ./../elements/footer %>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  
+  <% include ./../elements/logout %>
+  <!-- Bootstrap core JavaScript-->
+  
+  <!-- Core plugin JavaScript-->
+  <% include ./../elements/script %>
+
+</body>
+
+</html>
