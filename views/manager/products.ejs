@@ -27,25 +27,66 @@
 
     <!-- Sidebar -->
     <% include ./../elements/sidebar %>
-
+    <!-- lọc sản phẩm -->
+    <div id="sidebar" class="left">
+      <div class="sidebar_box"><span class="bottom"></span>
+          <h3>Phân loại</h3>   
+          <div class="content"> 
+              <ul class="sidebar_list">  
+                
+                  <li ><a href="../products/hoa/0" > Hoa</a></li>  
+                  <li><a href="../products/caykieng/0">Cây kiểng</a></li>
+                  <li><a href="../products/raumam/0">Rau mầm</a></li>
+                  <li><a href="../products/rauxanh/0">Rau xanh</a></li>
+                  <li><a href="../products/cu/0">Củ</a></li>
+                  <li><a href="../products/duoclieu/0">Dược liệu</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="sidebar_box"><span class="bottom"></span>
+          <h3>Top</h3>   
+          <div class="content"> 
+              <ul class="sidebar_list">
+                  <li><a href="#">Sản phẩm phổ biến</a></li>
+                  <li><a href="../products/low_price/0">Sản phẩm giá thấp</a></li>
+                  <li><a href="../products/hight_price/0">Sản phẩm giá cao</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="sidebar_box"><span class="bottom"></span>
+          <h3>Weekly Special</h3>   
+          <div class="content special"> 
+              <!--<img src="images/templatemo_image_01.jpg" alt="Flowers" />
+              <a href="#">Citrus Burst Bouquet</a>
+              <p>
+                  Price:
+                  <span class="price normal_price">$160</span>&nbsp;&nbsp;
+                  <span class="price special_price">$100</span>
+              </p> -->
+              <ul class="sidebar_list">
+                  <li><a href="#">giảm giá, khuyến mãi</a></li>
+                  <li><a href="#">quà tặng</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">users</li>
-        </ol>
+  <!-- Breadcrumbs-->
+  
+        
 
         <!-- DataTables Example -->
         <div class="card mb-3">
-          <div class="card-header">
+          <!-- <div class="card-header">
             <i class="fas fa-table"></i>
-           Quản lý Sản Phẩm</div>
+           Quản lý Sản Phẩm</div> -->
+           <a href="./../manager/add-product" class="btn btn-success pull-right ">Add Product</a>
           <div class="card-body">
+
+            
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -57,11 +98,32 @@
                       <th>Mô tả</th>
                     </tr>
                   </thead>
-                 
+                  <tbody>
+                    <% if(Products) {  %>
+                      <% while(i!= Products.length ){ %>
+                     <tr>
+                        <td><a href="productdetail"><img src=<%= Products[i].imagPath %> alt="floral 1"
+                            style="width:165px;height:165px;" /></a>
+                        </td>
+                        <td><%= Products[i].name %></td>  
+                        <td><%= Products[i].type %></td>
+                        <td><%= Products[i].price %></td>
+                        <td><%= Products[i].description %></td>
+                        <td>
+                          <a href="./../manager/add-product" class="btn btn-success ">Update</a>
+                         <!-- <input class="btn btn-primary" type="button" value="Update"> -->
+                              
+                      </td>
+                      <%  i=i+1;  %>
+                      <% }   %>
+                      <% } %>
+                   </tr>
+                  </tbody>
                 </table>
             </div>
           </div>
         </div>
+        
 
         <!-- <p class="small text-center text-muted my-5">
           <em>More table examples coming soon...</em>

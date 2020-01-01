@@ -1,11 +1,23 @@
 const Products = require('../models/products')
-
+exports.product1 = async (req, res) => {
+    try {
+        const products = await Products.find({});//.limit(8);
+        //res.json(posts);
+        res.render('manager/products', { 
+            title1: 'selected', title2: '', title3: '', title4: '', title5: '', title6: '', title7: '', 
+            Products: products, i: 0,
+            user: req.user
+        });
+    } catch (err) {
+        res.json({ message: err });
+    }
+}
 exports.product = async (req, res) => {
     try {
         const page = req.params.page;
         const products = await Products.find().skip(page * 8).limit(8);
         //res.json(posts);
-        res.render('products', {
+        res.render('manager/products', {
             title1: '', title2: '', title3: 'selected', title4: '', title5: '', title6: '', title7: '',
             Products: products, i: 0,
             user: req.user,
@@ -24,7 +36,7 @@ exports.product_type=async (req, res) => {
         const page = req.params.page;
         const products = await Products.find({"type":type}).skip(page * 8).limit(8);
         //res.json(posts);
-        res.render('products', {
+        res.render('manager/products', {
             title1: '', title2: '', title3: 'selected', title4: '', title5: '', title6: '', title7: '',
             Products: products, i: 0,
             user: req.user,
@@ -42,7 +54,7 @@ exports.product_low_price=async (req, res) => {
         const page = req.params.page;
         const products = await Products.find({"price": {$lt:30000}}).sort({"price":1}).skip(page * 8).limit(8);
         //res.json(posts);
-        res.render('products', {
+        res.render('manager/products', {
             title1: '', title2: '', title3: 'selected', title4: '', title5: '', title6: '', title7: '',
             Products: products, i: 0,
             user: req.user,
@@ -60,7 +72,7 @@ exports.product_hight_price=async (req, res) => {
         const page = req.params.page;
         const products = await Products.find({"price": {$gt:35000}}).sort({"price":-1}).skip(page * 8).limit(8);
         //res.json(posts);
-        res.render('products', {
+        res.render('manager/products', {
             title1: '', title2: '', title3: 'selected', title4: '', title5: '', title6: '', title7: '',
             Products: products, i: 0,
             user: req.user,
