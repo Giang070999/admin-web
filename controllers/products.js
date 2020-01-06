@@ -49,6 +49,36 @@ exports.product_type=async (req, res) => {
     }
 }
 
+exports.product_detail=async (req, res) => {
+    try {
+        const id = req.params.id;
+        const products = await Products.findById(id);
+        res.render('manager/product_detail', {
+            title1: '', title2: '', title3: 'selected', title4: '', title5: '', title6: '', title7: '',
+            Products: products, i: 0,
+            user: req.user
+        });
+    } catch (err) {
+        res.json({ message: err });
+    }
+}
+exports.add_product= async (req, res) => {
+    const id=req.params.id;
+    const new_product = new Products({
+        name:req.params.linkImage,
+        type: req.body.productName,
+        price: req.body.productType,
+        description: req.body.product_description,
+        ImagePath: req.body.productPrice,
+        // dateAdd: req.body.comment,
+    });
+    try {
+        const save_new_product = await new_product.save()
+        res.redirect('./../manager/products/0');  //trả về trang hiện tại
+    } catch (err) {
+        res.json({ message: err });
+    }
+}
 exports.product_low_price=async (req, res) => {
     try {
         const page = req.params.page;

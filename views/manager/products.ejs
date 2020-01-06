@@ -34,12 +34,12 @@
           <div class="content"> 
               <ul class="sidebar_list">  
                 
-                  <li ><a href="../products/hoa/0" > Hoa</a></li>  
-                  <li><a href="../products/caykieng/0">Cây kiểng</a></li>
-                  <li><a href="../products/raumam/0">Rau mầm</a></li>
-                  <li><a href="../products/rauxanh/0">Rau xanh</a></li>
-                  <li><a href="../products/cu/0">Củ</a></li>
-                  <li><a href="../products/duoclieu/0">Dược liệu</a></li>
+                  <li ><a href="./../manager/hoa/0" > Hoa</a></li>  
+                  <li><a href="./../manager/caykieng/0">Cây kiểng</a></li>
+                  <li><a href="./../manager/raumam/0">Rau mầm</a></li>
+                  <li><a href="./../manager/rauxanh/0">Rau xanh</a></li>
+                  <li><a href="./../manager/cu/0">Củ</a></li>
+                  <li><a href="./../manager/duoclieu/0">Dược liệu</a></li>
               </ul>
           </div>
       </div>
@@ -47,9 +47,9 @@
           <h3>Top</h3>   
           <div class="content"> 
               <ul class="sidebar_list">
-                  <li><a href="#">Sản phẩm phổ biến</a></li>
-                  <li><a href="../products/low_price/0">Sản phẩm giá thấp</a></li>
-                  <li><a href="../products/hight_price/0">Sản phẩm giá cao</a></li>
+                  <!-- <li><a href="#">Sản phẩm phổ biến</a></li> -->
+                  <li><a href="./../manager/low_price/0">Sản phẩm giá thấp</a></li>
+                  <li><a href="./../manager/hight_price/0">Sản phẩm giá cao</a></li>
               </ul>
           </div>
       </div>
@@ -66,8 +66,8 @@
               <ul class="sidebar_list">
                   <li><a href="#">giảm giá, khuyến mãi</a></li>
                   <li><a href="#">quà tặng</a></li>
-              </ul>
-          </div>
+              </ul> 
+           </div>
       </div>
   </div>
   
@@ -102,7 +102,7 @@
                     <% if(Products) {  %>
                       <% while(i!= Products.length ){ %>
                      <tr>
-                        <td><a href="productdetail"><img src=<%= Products[i].imagPath %> alt="floral 1"
+                        <td><a href="./../manager/product_detail"><img src=<%= Products[i].imagPath %> alt="floral 1"
                             style="width:165px;height:165px;" /></a>
                         </td>
                         <td><%= Products[i].name %></td>  
@@ -110,7 +110,7 @@
                         <td><%= Products[i].price %></td>
                         <td><%= Products[i].description %></td>
                         <td>
-                          <a href="./../manager/add-product" class="btn btn-success ">Update</a>
+                          <a href="./../manager/update-product" class="btn btn-success ">Update</a>
                          <!-- <input class="btn btn-primary" type="button" value="Update"> -->
                               
                       </td>
@@ -120,6 +120,8 @@
                    </tr>
                   </tbody>
                 </table>
+                
+                
             </div>
           </div>
         </div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Product Detail - Floral Template</title>
+    
+    <base href="/">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1-4-2.min.js"></script>
+    <link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+    <script type="text/JavaScript" src="js/slimbox2.js"></script>
+</head>
+
+<body>
+    <div id="templatemo_wrapper_sp">
+
+        <!-- <div id="templatemo_header_wsp">
+            <div id="templatemo_header" class="header_subpage">
+               
+             </div>
+        </div> END of header wrapper -->
+        <div id="templatemo_main_wrapper">
+            <div id="templatemo_main">
+              
+                <div id="content" class="right">
+                    <h2><%= Products.name %></h2>
+                    <div class="content_half left">
+                        <a rel="lightbox" href="<%= Products.imagPath %>">
+                            <img src="<%= Products.imagPath %>" alt="yellow flowers"
+                                style="width:330px;height:200px;" />
+                        </a>
+                    </div>
+                    <div class="content_half right">
+                        <table>
+                            <tr>
+                                <td width="130">Price:</td>
+                                <td width="84"><%= Products.price %></td>
+                            </tr>
+                            <tr>
+                                <td>Availability:</td>
+                                <td><strong>In Stock</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><input type="text" value="1" size="6" maxlength="2" /></td>
+                            </tr>
+                        </table>
+                        <!-- <div class="cleaner h20"></div>
+                        <a href="shoppingcart.html" class="button">Add to Cart</a> -->
+                    </div>
+                    <div class="cleaner h40"></div>
+
+                    <h4>Mô tả sản phẩm</h4>
+                    <p><%= Products.description %></p>
+            </div> <!-- END of main -->
+        </div> <!-- END of main wrapper -->
+        
+    </div>
+</body>
+
+</html>
+
