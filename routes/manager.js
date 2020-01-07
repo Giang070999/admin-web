@@ -19,7 +19,10 @@ router.get('/login', function(req, res, next) {
 
   router.get('/products',controller.product1);
 
-  router.get('/add-product', controller.add_product);
+  router.get('/add-product', function(req, res, next) {
+    res.render('manager/add-product');
+  });
+  //router.get('/add-product', controller.add_product);
  
   router.get('/product_detail', controller.product_detail);
 
